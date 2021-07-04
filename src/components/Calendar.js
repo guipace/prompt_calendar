@@ -1,13 +1,15 @@
 import React from 'react';
-import dateFns from 'date-fns';
+import CalendarHeader from './CalendarHeader';
+import CalendarWeekDays from './CalendarWeekDays';
+import CalendarDays from './CalendarDays';
 
-const Calendar = () => {
+const Calendar = ({state}) => {
 
   return (
     <div>
-      <div>HEADER</div>
-      <div>Days</div>
-      <div>Cells</div>
+      <CalendarHeader state={state}/>
+      <CalendarWeekDays state={state}/>
+      <CalendarDays state={state}/>
     </div>
   )
 }

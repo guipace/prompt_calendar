@@ -1,10 +1,12 @@
 import React from 'react';
+import logo2 from '../images/logo2.png'
 
-const TheHeader = () => {
-  
+const TheHeader = ({state}) => {
 
   return (
-    <h1>HEADER</h1>
+    <div>
+      <h1><img src={logo2} alt='logo' style={{height: '2rem'}}></img> - Appointment Calendar</h1>
+    </div>
   )
 }
 

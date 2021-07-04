@@ -1,10 +1,10 @@
 import React from 'react';
 import Calendar from './Calendar';
 
-const TheContentFrame = () => {
+const TheContentFrame = ({state}) => {
 
   return (
-    <Calendar />
+    <Calendar state={state}/>
   )
 }
 
