@@ -14,7 +14,7 @@ function App() {
   // }
 
   return (
-    <div className="App">
+    <div className="center-text">
       <TheHeader />
       <TheContentFrame state={[currentDate, setCurrentDate, viewDate, setViewDate, selectedDate, setSelectedDate]}/>
     </div>

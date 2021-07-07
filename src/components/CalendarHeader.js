@@ -12,10 +12,10 @@ const CalendarHeader = ({state}) => {
   };
 
   return (
-    <div>
-      <div className='' onClick={prevMonth}>Prev</div>
+    <div id='calendar-header'>
+      <div className='icon' onClick={prevMonth}>arrow_back_ios</div>
       <h1>{format(viewDate, 'MMMM yyyy')}</h1>
-      <div className='' onClick={nextMonth}>Next</div>
+      <div className='icon' onClick={nextMonth}>arrow_forward_ios</div>
     </div>
   )
 }

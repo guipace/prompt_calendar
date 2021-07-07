@@ -1,11 +1,12 @@
 import React from 'react';
 import logo2 from '../images/logo2.png'
 
-const TheHeader = ({state}) => {
+const TheHeader = () => {
 
   return (
-    <div className='App-header'>
-      <h1><img src={logo2} alt='logo' style={{height: '2rem'}}></img> - Appointment Calendar</h1>
+    <div id='the-header'>
+      <img src={logo2} alt='logo' style={{height: '2.5rem'}}></img>
+      <h1> - Appointment Calendar</h1>
     </div>
   )
 }

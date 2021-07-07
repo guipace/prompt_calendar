@@ -6,7 +6,7 @@ import CalendarDays from './CalendarDays';
 const Calendar = ({state}) => {
 
   return (
-    <div className='calendar'>
+    <div>
       <CalendarHeader state={state}/>
       <CalendarWeekDays state={state}/>
       <CalendarDays state={state}/>
