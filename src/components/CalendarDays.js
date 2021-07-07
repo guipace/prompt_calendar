@@ -2,15 +2,12 @@ import React from 'react';
 import { format, parse, startOfMonth, endOfMonth, startOfWeek, endOfWeek, isSameMonth, isSameDay, addDays } from 'date-fns';
 
 const CalendarDays = ({state}) => {
-  const { currentDate, selectedDate } = state;
-  const monthStart = startOfMonth(currentDate);
+  const [currentDate, setCurrentDate, viewDate, setViewDate, selectedDate, setSelectedDate] = state;
+
+  const monthStart = startOfMonth(viewDate);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
   const endDate = endOfWeek(monthEnd);
-
-  const selectDate = (day) => {
-    state.selectedDate = day
-  }
 
   const weeks= [];
   let days = [];
@@ -18,7 +15,6 @@ const CalendarDays = ({state}) => {
   let formattedDate = '';
 
   while (day <= endDate) {
-    console.log(day)
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, 'd');
       const cloneDay = day;
@@ -31,7 +27,7 @@ const CalendarDays = ({state}) => {
             ""
           }`}
           key={day}
-          onClick={() => selectDate(parse(cloneDay, 'd', new Date()))}
+          onClick={() => setSelectedDate(parse(cloneDay, 'd', new Date()))}
         >
           <span className="number">{formattedDate}</span>
           {/* <span className="bg">{formattedDate}</span> */}
@@ -47,8 +43,6 @@ const CalendarDays = ({state}) => {
     )
     days = [];
   }
-
-  console.log(weeks)
 
   return (
     <div className="body">{weeks}</div>

@@ -1,18 +1,20 @@
 import React from 'react';
-import { format } from 'date-fns';
+import { format, addMonths } from 'date-fns';
 
 const CalendarHeader = ({state}) => {
+  const [currentDate, setCurrentDate, viewDate, setViewDate, selectedDate, setSelectedDate] = state;
+
   const  prevMonth = () => {
-    console.log('PREVIOUS MONTH')
+    setViewDate(addMonths(viewDate, -1))
   };
   const nextMonth = () => {
-    console.log('NEXT MONTH')
+    setViewDate(addMonths(viewDate, 1))
   };
 
   return (
     <div>
       <div className='' onClick={prevMonth}>Prev</div>
-      <h1>{format(state.viewDate, 'MMMM yyyy')}</h1>
+      <h1>{format(viewDate, 'MMMM yyyy')}</h1>
       <div className='' onClick={nextMonth}>Next</div>
     </div>
   )
